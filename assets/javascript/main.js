@@ -28,6 +28,19 @@ for (
     // event.target tells us which element the user clicked (see Resources links below):
     const clickedCellElement = event.target;
     // Log the ID of the cell which was just clicked:
+    if (currentPlayer === "X") {
+      clickedCellElement.innerHTML = "X";
+      playerXSelections.push(clickedCellElement.id);
+      playerXSelections.sort();
+      console.log(playerXSelections);
+      currentPlayer = "O";
+    } else if (currentPlayer === "O") {
+      clickedCellElement.innerHTML = "O";
+      playerOSelections.push(clickedCellElement.id);
+      playerOSelections.sort();
+      console.log(playerOSelections);
+      currentPlayer = "X";
+    }
     console.log("You clicked on cell number: " + clickedCellElement.id);
   });
 }
